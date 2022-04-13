@@ -26,9 +26,11 @@ RSpec.describe Account do
     end
 
     it 'should not update account address' do
+      origin_address = @account.address
       @account.update(address: "updated_address")
       @account.reload
       expect(@account.address).not_to eq "updated_address"
+      expect(@account.address).to eq origin_address
     end
 
     it 'should delete the account' do

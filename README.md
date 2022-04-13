@@ -23,6 +23,14 @@ bundle install
 rspec test/wallet_application_spec.rb
 ```
 
+## Features
+
+- To make as less codes as possible, I just use active_record gem
+- Use database sqlite to store data
+- Use active_record lucky lock to handle transfer
+- Transfer have retry function when failed, max retry time is 5
+- `balance` and `amount` use decimal type to store, precision 20 and scale 6
+
 ## Design
 
 Account data demo:
